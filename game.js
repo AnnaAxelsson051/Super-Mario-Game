@@ -1,5 +1,4 @@
 
-
 //Initialize kaboom
 kaboom({
   global: true,
@@ -49,9 +48,7 @@ loadSprite('blue-surprise', 'RMqCc1G.png')
 
 loadRoot('https://i.imgur.com/')
 loadSprite('red-flower', 'lrflEvy.png')
-
-loadRoot('https://imgur.com/')
-loadSprite('blue-flower', '39XU7Rx')
+loadSprite('white-flower', 'n5U4VgX.png')
 
 scene("game", ({ level, score }) => {
   layers(['bg', 'obj', 'ui'], 'obj')
@@ -73,7 +70,7 @@ scene("game", ({ level, score }) => {
      'H    %    J*=%=%      §             =%=   ',
      'H                     H                %% ',
      'H                            -+           ',
-     '      §   B    § §^      ^ ^ ()       §   ',
+     '      §  w     § §^      ^ ^ ()       §   ',
      'H===============================    ======',
     ],
     [
@@ -90,7 +87,27 @@ scene("game", ({ level, score }) => {
       '£                        x  $x  x  x   -+£',
       '££        z z    z    zx x  $x  x  x   ()£',
       '!!!x!!!!!!x!!!!!!!!!!!!! !  !!  !  !!!!!!!',
-    ]
+    ],
+    [
+      //works
+      //Level 1
+      '                        %                                     ',
+      '                                   %%                         ',
+      '        %%*               H                                   ',  
+      '                       HHHH                                   ',
+      '                                  HHH       X%                ',
+      '        HHHHH                           x                     ',
+      'r               =             %                 xxx           ',
+      'H                                                             ',
+      '            §     HH                       xx                 ',
+      '    HX   %Xxxxx            =H*H           x            =%=    ',
+      '                       H   =           §              H       ',
+      '                           =           xx                   -+',
+      '    r      ^  ^ ^   x      =    r                       §r  ()',
+      '=====================      =======       HHHHH  x    =========',
+    ],
+ 
+   
   ]
 
   //measurements for sprites
@@ -105,7 +122,7 @@ scene("game", ({ level, score }) => {
     '§': [sprite('flower'), 'flower'],
     /**/ 
     'r': [sprite('red-flower'), 'red-flower', scale(0.4)],
-    'B': [sprite('blue-flower'), 'blue-flower', scale(0.4)],
+    'w': [sprite('white-flower'), 'white-flower', scale(0.4)],
     /**/ 
     '%': [sprite('surprise'), solid(), 'coin-surprise'],
     '*': [sprite('surprise'), solid(), 'mushroom-surprise'],
@@ -122,13 +139,14 @@ scene("game", ({ level, score }) => {
     '^': [sprite('evil-shroom'), solid(), 'dangerous', body()],
     '#': [sprite('mushroom'), solid(), 'mushroom', body()],
 
-     //Blue level
-     '!': [sprite('blue-block'), solid(), scale(0.5)],
-     '£': [sprite('blue-brick'), solid(), scale(0.5)],
-     'z': [sprite('blue-evil-shroom'), solid(), scale(0.5), 'dangerous',body()],
-     '@': [sprite('blue-surprise'), solid(), scale(0.5), 'coin-surprise'],
-     'b': [sprite('blue-surprise'), solid(), scale(0.5), 'mushroom-surprise'],
-     'x': [sprite('blue-steel'), solid(), scale(0.5)]
+    //Blue level
+    '!': [sprite('blue-block'), solid(), scale(0.5)],
+    '£': [sprite('blue-brick'), solid(), scale(0.5)],
+    'z': [sprite('blue-evil-shroom'), solid(), scale(0.5), 'dangerous',body()],
+    '@': [sprite('blue-surprise'), solid(), scale(0.5), 'coin-surprise'],
+    'b': [sprite('blue-surprise'), solid(), scale(0.5), 'mushroom-surprise'],
+    'x': [sprite('blue-steel'), solid(), scale(0.5)],
+
   }
 
   //go into array get the first level and the config
@@ -194,6 +212,11 @@ scene("game", ({ level, score }) => {
     big(),  //so he can get big if eats mushroom
     origin('bot')
   ])
+/*
+  //mushroom movement
+  action('mushroom', (m) => {
+    m.move(18, 0)
+  })*/
 
   /***************** HEADBUMPING ******************/
 
@@ -215,6 +238,16 @@ scene("game", ({ level, score }) => {
       destroy(obj)
       gameLevel.spawn('}', obj.gridPos.sub(0,0))
     }
+    if (obj.is('evil-shroom-surprise')) {
+      gameLevel.spawn('^', obj.gridPos.sub(0, 1))
+      destroy(obj)
+      gameLevel.spawn('}', obj.gridPos.sub(0,0))
+    }
+    if (obj.is('blue-evil-shroom-surprise')) {
+      gameLevel.spawn('z', obj.gridPos.sub(0, 1))
+      destroy(obj)
+      gameLevel.spawn('}', obj.gridPos.sub(0,0))
+    }
   })
 
   /********************* COLLIDING WITH OBJECTS /DEATH ******************** */
@@ -231,6 +264,10 @@ scene("game", ({ level, score }) => {
     scoreLabel.text = scoreLabel.value
   })
 
+/*
+  action('dangerous', (d) => {      
+    d.move(-ENEMY_SPEED, 0)
+  })*/
 
   player.collides('dangerous', (d) => {
     if (isJumping) {
@@ -263,7 +300,15 @@ scene("game", ({ level, score }) => {
     }
   })
 
-
+/*
+  player.collides('pipe', () => {
+    keyPress('down', () => {
+      go('game', {
+        level: (level + 1) % maps.length,
+        score: scoreLabel.value
+      })
+    })
+  })*/
   /******************* MUSHROOM MOVENEMNTS ************* */
 
   action('mushroom', (m) => {
