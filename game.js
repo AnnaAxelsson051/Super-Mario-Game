@@ -98,7 +98,7 @@ scene("game", ({ level, score }) => {
      'H H  %    J*=%=%      w             =%=   ',
      'H                     H     J          %% ',
      'H                            -+           ',
-     'uuuu       U^  ^    K u    s ()       kp  ',
+     'uuuu       U^  ^    K u   ^s ()       kp  ',
      'H===============================    ======',
     ],
 
@@ -137,6 +137,60 @@ scene("game", ({ level, score }) => {
       '    r   ^wB^ ^                        x  uuuu   us      Ur  ()',
       '==========================x=====     x   HHHHH  xx   =========',
     ]
+    /*,[
+      //Level 1 Flowerlevel
+     'H                                         ',
+     'H  %              sss                     ',
+     'H       =%=      HHHHH                    ',  
+     'H                                         ',
+     'H         r                               ',
+     'H  ==x   ===HH           H*H              ',
+     'H                =                        ',
+     'H  s                    uuc               ',
+     'H sH                    HHH           s   ',
+     'H H  %    J*=%=%      w             =%=   ',
+     'H                     H     J          %% ',
+     'H                            -+           ',
+     'uuuu       U^  ^    K u    s ()       kp  ',
+     'H===============================    ======',
+    ],
+
+    [
+      //level 2 Blue level
+      '£                                        £',
+      '£                                        £',
+      '£           ££                !@@!       £',
+      '£  @@  £                                 £',
+      '£                  !@!@       uuuu       £',
+      '£              uuu!          !!!!!!    @!£',
+      '£  £££!        !!!!     ux               £',
+      '£     x        !  !   xxx                £',
+      '£                    x               xxxx£',
+      '£        @@@@@b     x        x  x        £',
+      '£                  x        $x  x        £',
+      '£                        x  $x  x  x   -+£',
+      '      UB  z z    z   zux x  $x  x  xuuu()£',
+      '!!!x!!!!!!x!!!!!!!!!!!!! !  !!  !  !!!!!!!',
+    ],
+    [
+      //Goombalevel
+      //Level 1
+      '                        %                                     ',
+      '                                   %%                         ',
+      '        %%*               H                                   ',  
+      '                       HHHH                                   ',
+      '                        HH        HHH       X%                ',
+      '        HHHHH                    HHHHH  x                     ',
+      '                =             X                 xxx           ',
+      '                                                              ',
+      '            Y     HHHH                     xx                 ',
+      '    HX   %Xxxxx    HHHH    =H*H           x            =%=    ',
+      '                           =                          H       ',
+      '                                        x                   -+',
+      '    r   ^wB^ ^                        x  uuuu   us      Ur  ()',
+      '==========================x=====     x   HHHHH  xx   =========',
+    ]*/
+ 
  
    
   ]
