@@ -15,7 +15,7 @@ const JUMP_FORCE = 360
 const BIG_JUMP_FORCE = 550
 let CURRENT_JUMP_FORCE = JUMP_FORCE
 const FALL_DEATH = 400
-const ENEMY_SPEED = 22
+const ENEMY_SPEED = 27
 
 // Game logic
 
@@ -49,63 +49,94 @@ loadSprite('blue-surprise', 'RMqCc1G.png')
 loadRoot('https://i.imgur.com/')
 loadSprite('red-flower', 'lrflEvy.png')
 loadSprite('white-flower', 'n5U4VgX.png')
+loadSprite('blue-flower', '39XU7Rx.png')
+loadSprite('flower-blue2', 'COaSI01.png')
+loadSprite('flower-pink', 'h0wteY1.png')
+loadSprite('flower-yellow2', '1ghgoNa.png')
+loadSprite('flower-knopp', 'YZkRiAn.png')
+loadSprite('flower-bukett', 'ERnrj3M.png')
+loadSprite('flower-bukett2', 'kepwINJ.png')
+loadSprite('branch', 'rq6F1hk.png')
+loadSprite('cat', 'FbkqHBE.png')
+loadSprite('grass-green', 'dITAwi7.png')
+loadSprite('grass-blue', 'FpSh0nF.png')
+loadSprite('grass-small', 'ZLRAmR8.png')
+loadSprite('diamond-blue', '64cPg7H.png')
+loadSprite('diamond-blue2', 'xSX5W9r.png')
+
+/*
+Rose
+https://imgur.com/TUZVmWA
+Gul blomma solros:
+https://imgur.com/Otl6TuR
+ */
+
+
+
+
+
+
+
+
 
 scene("game", ({ level, score }) => {
   layers(['bg', 'obj', 'ui'], 'obj')
 
   //array of the maps
   const maps = [
-
-   
     [
-      //Level 1
+      //Level 1 Flowerlevel
      'H                                         ',
-     'H       =%=                               ',  
+     'H  %              sss                     ',
+     'H       =%=      HHHHH                    ',  
      'H                                         ',
      'H         r                               ',
-     'H        === H           H*H              ',
+     'H  ==x   === H           H*H              ',
      'H                =                        ',
-     'H                                         ',
-     'H                       HHH               ',
-     'H    %    J*=%=%      §             =%=   ',
-     'H                     H                %% ',
+     'H  s                    uuc               ',
+     'H sH                    HHH           s   ',
+     'H H  %    J*=%=%      w             =%=   ',
+     'H                     H     J          %% ',
      'H                            -+           ',
-     '      §  w     § §^      ^ ^ ()       §   ',
+     'uuuu       U^  ^    K u    s ()       kp  ',
      'H===============================    ======',
     ],
+
     [
-      //level 2
-      '£                             !@@!       £',
+      //level 2 Blue level
       '£                                        £',
-      '£                  !@!@                  £',
-      '£                 !          !!!!!!    @!£',
-      '£  £££!        !!!!      x               £',
+      '£                                        £',
+      '£           ££                !@@!       £',
+      '£  @@  £                                 £',
+      '£                  !@!@       uuuu       £',
+      '£              uuu!          !!!!!!    @!£',
+      '£  £££!        !!!!     ux               £',
       '£     x        !  !   xxx                £',
       '£                    x               xxxx£',
       '£        @@@@@b     x        x  x        £',
-      '£                  x         x  x        £',
+      '£                  x        $x  x        £',
       '£                        x  $x  x  x   -+£',
-      '££        z z    z    zx x  $x  x  x   ()£',
+      '      UB  z z    z   zux x  $x  x  xuuu()£',
       '!!!x!!!!!!x!!!!!!!!!!!!! !  !!  !  !!!!!!!',
     ],
     [
-      //works
+      //Goombalevel
       //Level 1
       '                        %                                     ',
       '                                   %%                         ',
       '        %%*               H                                   ',  
       '                       HHHH                                   ',
-      '                                  HHH       X%                ',
-      '        HHHHH                           x                     ',
-      'r               =             %                 xxx           ',
-      'H                                                             ',
-      '            §     HH                       xx                 ',
-      '    HX   %Xxxxx            =H*H           x            =%=    ',
-      '                       H   =           §              H       ',
-      '                           =           xx                   -+',
-      '    r      ^  ^ ^   x      =    r                       §r  ()',
-      '=====================      =======       HHHHH  x    =========',
-    ],
+      '                        HH        HHH       X%                ',
+      '        HHHHH                    HHHHH  x                     ',
+      '                =             X                 xxx           ',
+      '                                                              ',
+      '            Y     HHHH                     xx                 ',
+      '    HX   %Xxxxx    HHHH    =H*H           x            =%=    ',
+      '                           =                          H       ',
+      '                                        x                   -+',
+      '    r   ^wB^ ^                        x  uuuu   us      Ur  ()',
+      '==========================x=====     x   HHHHH  xx   =========',
+    ]
  
    
   ]
@@ -123,6 +154,23 @@ scene("game", ({ level, score }) => {
     /**/ 
     'r': [sprite('red-flower'), 'red-flower', scale(0.4)],
     'w': [sprite('white-flower'), 'white-flower', scale(0.4)],
+    'B': [sprite('blue-flower'), 'blue-flower', scale(0.4)],
+    'U': [sprite('flower-blue2'), 'flower-blue2', scale(0.4)],
+    'Y': [sprite('flower-yellow2'), 'flower-yellow2', scale(0.4)],
+    'o': [sprite('flower-knopp'), 'flower-knopp', scale(0.4)],
+    'k': [sprite('flower-bukett2'), 'flower-bukett2', scale(0.4)],
+    'K': [sprite('flower-bukett'), 'flower-bukett', scale(0.4)],
+    'p': [sprite('flower-pink'), 'flower-pink', scale(0.4)],
+    'y': [sprite('branch'), 'branch', scale(0.25)],
+
+    'c': [sprite('cat'), 'cat', scale(0.5)],
+
+    'g': [sprite('grass-green'), 'grass-green', scale(0.5)],
+    'u': [sprite('grass-blue'), 'grass-blue', scale(0.4)],
+    's': [sprite('grass-small'), 'grass-small', scale(0.5)],
+
+    'd': [sprite('diamond-blue'), 'diamond-blue', scale(0.4)],
+    '2': [sprite('diamond-blue2'), 'diamond-blue2', scale(0.4)],
     /**/ 
     '%': [sprite('surprise'), solid(), 'coin-surprise'],
     '*': [sprite('surprise'), solid(), 'mushroom-surprise'],
@@ -234,7 +282,7 @@ scene("game", ({ level, score }) => {
     }
     //flower surprise
     if (obj.is('flower-surprise')) {
-      gameLevel.spawn('§', obj.gridPos.sub(0, 1))
+      gameLevel.spawn('Y', obj.gridPos.sub(0, 1))
       destroy(obj)
       gameLevel.spawn('}', obj.gridPos.sub(0,0))
     }
