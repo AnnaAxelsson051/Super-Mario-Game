@@ -15,7 +15,7 @@ const JUMP_FORCE = 360
 const BIG_JUMP_FORCE = 550
 let CURRENT_JUMP_FORCE = JUMP_FORCE
 const FALL_DEATH = 400
-const ENEMY_SPEED = 27
+const ENEMY_SPEED = 34
 
 // Game logic
 
@@ -360,7 +360,7 @@ scene("game", ({ level, score }) => {
   /******************* MUSHROOM MOVENEMNTS ************* */
 
   action('mushroom', (m) => {
-    m.move(18, 0)
+    m.move(24, 0)
   })
 
   /****************** ENEMY MOVEMENTS **************** */
