@@ -41,8 +41,17 @@ loadSprite('pipe-top-right', 'hj2GK4n.png')
 loadSprite('pipe-bottom-left', 'c1cYSbt.png')
 loadSprite('pipe-bottom-right', 'nqQ79eI.png')
 
+loadSprite('blue-block', 'fVscIbn.png')
+loadSprite('blue-brick', '3e5YRQd.png')
+loadSprite('blue-steel', 'gqVoI2b.png')
+loadSprite('blue-evil-shroom', 'SvV4ueD.png')
+loadSprite('blue-surprise', 'RMqCc1G.png')
+
 loadRoot('https://i.imgur.com/')
 loadSprite('red-flower', 'lrflEvy.png')
+
+loadRoot('https://imgur.com/')
+loadSprite('blue-flower', '39XU7Rx')
 
 scene("game", ({ level, score }) => {
   layers(['bg', 'obj', 'ui'], 'obj')
@@ -64,8 +73,23 @@ scene("game", ({ level, score }) => {
      'H    %    J*=%=%      §             =%=   ',
      'H                     H                %% ',
      'H                            -+           ',
-     '      §        § §^      ^ ^ ()       §   ',
+     '      §   B    § §^      ^ ^ ()       §   ',
      'H===============================    ======',
+    ],
+    [
+      //level 2
+      '£                             !@@!       £',
+      '£                                        £',
+      '£                  !@!@                  £',
+      '£                 !          !!!!!!    @!£',
+      '£  £££!        !!!!      x               £',
+      '£     x        !  !   xxx                £',
+      '£                    x               xxxx£',
+      '£        @@@@@b     x        x  x        £',
+      '£                  x         x  x        £',
+      '£                        x  $x  x  x   -+£',
+      '££        z z    z    zx x  $x  x  x   ()£',
+      '!!!x!!!!!!x!!!!!!!!!!!!! !  !!  !  !!!!!!!',
     ]
   ]
 
@@ -81,6 +105,7 @@ scene("game", ({ level, score }) => {
     '§': [sprite('flower'), 'flower'],
     /**/ 
     'r': [sprite('red-flower'), 'red-flower', scale(0.4)],
+    'B': [sprite('blue-flower'), 'blue-flower', scale(0.4)],
     /**/ 
     '%': [sprite('surprise'), solid(), 'coin-surprise'],
     '*': [sprite('surprise'), solid(), 'mushroom-surprise'],
@@ -97,6 +122,13 @@ scene("game", ({ level, score }) => {
     '^': [sprite('evil-shroom'), solid(), 'dangerous', body()],
     '#': [sprite('mushroom'), solid(), 'mushroom', body()],
 
+     //Blue level
+     '!': [sprite('blue-block'), solid(), scale(0.5)],
+     '£': [sprite('blue-brick'), solid(), scale(0.5)],
+     'z': [sprite('blue-evil-shroom'), solid(), scale(0.5), 'dangerous',body()],
+     '@': [sprite('blue-surprise'), solid(), scale(0.5), 'coin-surprise'],
+     'b': [sprite('blue-surprise'), solid(), scale(0.5), 'mushroom-surprise'],
+     'x': [sprite('blue-steel'), solid(), scale(0.5)]
   }
 
   //go into array get the first level and the config
