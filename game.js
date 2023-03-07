@@ -84,10 +84,11 @@ scene("game", ({ level, score }) => {
 
   //array of the maps
   const maps = [
+
     [
       //Level 1 Flowerlevel
      'H                                         ',
-     'H  %              sss                     ',
+     'H  %%             sss                     ',
      'H       =%=      HHHHH                    ',  
      'H                                         ',
      'H         r                               ',
@@ -98,7 +99,7 @@ scene("game", ({ level, score }) => {
      'H H  %    J*=%=%      w             =%=   ',
      'H                     H     J          %% ',
      'H                            -+           ',
-     'uuuu       U^  ^    K u   ^s ()       kp  ',
+     'uuuu       U^  ^ ^  K u ^ ^s^()       kp  ',
      'H===============================    ======',
     ],
 
@@ -106,7 +107,7 @@ scene("game", ({ level, score }) => {
       //level 2 Blue level
       '£                                        £',
       '£                                        £',
-      '£           ££                !@@!       £',
+      '£           ££                !@@!      @£',
       '£  @@  £                                 £',
       '£                  !@!@       uuuu       £',
       '£              uuu!          !!!!!!    @!£',
@@ -116,9 +117,10 @@ scene("game", ({ level, score }) => {
       '£        @@@@@b     x        x  x        £',
       '£                  x        $x  x        £',
       '£                        x  $x  x  x   -+£',
-      '      UB  z z    z   zux x  $x  x  xuuu()£',
+      '      UBz z z    z   zux x  $x  x  xuuu()£',
       '!!!x!!!!!!x!!!!!!!!!!!!! !  !!  !  !!!!!!!',
     ],
+  
     [
       //Goombalevel
       //Level 1
