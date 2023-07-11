@@ -8,8 +8,7 @@ This is a fun Super Mario Game with Retro styling and multiple levels. Navigatio
 
 ## User Interface
 
-![super-mario-bana-1-2 copy](https://github.com/AnnaAxelsson051/Images/assets/103879144/ed2e339f-b29e-480b-a800-ad6f9f6a0677)
-![super-mario-bana-2 copy](https://github.com/AnnaAxelsson051/Images/assets/103879144/e6bf7cb2-785c-4114-b51b-069c74c9ce61)
+![Screenshot 2023-07-11 at 18 44 11](https://github.com/AnnaAxelsson051/Images/assets/103879144/375d4ea0-dd0c-4160-9cff-faf04f0d8988)
 
 ## Technologies used
 
