@@ -17,6 +17,7 @@ This is a fun retro Super Mario game with and multiple levels. For navigation: u
 ## Technologies used
 
 - JavaScript
+- Kaboom.js
 - HTML
 - CSS
 
