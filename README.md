@@ -4,11 +4,15 @@
 
 ## User Interface
 
-![Screenshot 2023-07-11 at 18 44 11](https://github.com/AnnaAxelsson051/Images/assets/103879144/375d4ea0-dd0c-4160-9cff-faf04f0d8988)
+![User interface](User-interface.png)
+
+---
 
 ## Description
 
-This is a fun Retro Super Mario Game with and multiple levels. For navigation: use < To move the player left, > to move the player right and space-key to jump. 
+This is a fun Retro Super Mario Game with and multiple levels. For navigation: use <b><</b> key To move the player left, and <b>></b> key to move the player right and <b>space</b> key to jump. 
+
+---
 
 ## Technologies used
 
