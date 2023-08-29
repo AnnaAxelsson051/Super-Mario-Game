@@ -10,7 +10,7 @@
 
 ## Description
 
-This is a fun Retro Super Mario Game with and multiple levels. For navigation: use <b><</b> key To move the player left, and <b>></b> key to move the player right and <b>space</b> key to jump. 
+This is a fun Retro Super Mario Game with and multiple levels. For navigation: use < to move the player left, > to move right and space-key to jump. 
 
 ---
 
